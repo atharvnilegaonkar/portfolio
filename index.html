@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharv Nilegaonkar | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #000000;
+        }
+        
+        /* Animation for hero section */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Custom underline effect */
+        .underline-effect {
+            position: relative;
+        }
+        
+        .underline-effect::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #9333ea;
+            transition: width 0.3s ease;
+        }
+        
+        .underline-effect:hover::after {
+            width: 100%;
+        }
+        
+        /* Project card hover effect */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(147, 51, 234, 0.1), 0 10px 10px -5px rgba(147, 51, 234, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-purple-500 font-bold text-xl flex items-center">
+                        <span class="bg-purple-600 w-6 h-6 rounded-full flex items-center justify-center mr-2">
+                            <span class="w-2 h-2 bg-white rounded-full"></span>
+                        </span>
+                        Atharv Nilegaonkar
+        
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="underline-effect px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="underline-effect px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#skills" class="underline-effect px-3 py-2 text-sm font-medium">Skills</a>
+                        <a href="#contact" class="underline-effect px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Skills</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 pb-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="text-purple-500">Atharv Nilegaonkar</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-300">
+                        Full Stack Developer
+                    </h2>
+                    <p class="text-lg text-gray-400 mb-8 max-w-lg">
+                        As a full-stack web developer, I design and develop complete digital ecosystems that are clean, fast, secure, and intuitive. Let’s turn your ideas into high-impact web experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 bg-purple-600 rounded-full opacity-20 blur-xl"></div>
+                        <div class="relative floating">
+                            <img src="atharvvv.jpg" 
+                                 alt="Profile" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="text-purple-500">About</span> Me
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full">
+                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+                    <p class="text-gray-400 mb-6">
+                        I'm Atharv Nilegaonkar, a passionate Full Stack Developer with expertise in building responsive, user-friendly websites and applications. I specialize in creating digital products that deliver real business value through clean code and intuitive design.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gray-800 p-6 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-600 p-2 rounded-full mr-4">
+                                    <i class="fas fa-code text-white"></i>
+                                </div>
+                                <h4 class="font-semibold">Web Development</h4>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                Building modern, responsive websites and web applications using React, Vue, Node.js and other cutting-edge technologies.
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        
+  <a href="https://github.com/atharvnilegaonkar" target="_blank" rel="noopener noreferrer"
+   class="flex items-center text-white bg-gray-800 px-6 py-3 rounded-lg shadow-lg hover:bg-gray-900 transition duration-300 gap-2">
+  <!-- GitHub Icon -->
+  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </svg>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                My <span class="text-purple-500">Skills</span>
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Frontend Skills -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-600 p-2 rounded-lg mr-4">
+                            <i class="fas fa-laptop-code text-white"></i>
+                        </div>
+                        <h3 class="font-semibold">Frontend</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>HTML5</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>CSS3</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>JavaScript</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>React.js</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-600 p-2 rounded-lg mr-4">
+                            <i class="fas fa-server text-white"></i>
+                        </div>
+                        <h3 class="font-semibold">Backend</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>Node.js</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>Express.js</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>REST APIs</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Database Skills -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-600 p-2 rounded-lg mr-4">
+                            <i class="fas fa-database text-white"></i>
+                        </div>
+                        <h3 class="font-semibold">Databases</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>PostgreSQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>MySQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>MongoDB</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Version Control -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-600 p-2 rounded-lg mr-4">
+                            <i class="fas fa-code-branch text-white"></i>
+                        </div>
+                        <h3 class="font-semibold">Version Control</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>Git</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                            <span>GitHub</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Get In <span class="text-purple-500">Touch</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <p class="text-gray-400 mb-8">
+                        Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-purple-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <a href="mailto:atharv.nilegaonkar@gmail.com" class="text-gray-400 hover:text-purple-500">atharv.nilegaonkar@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <a href="tel:+91721953764" class="text-gray-400 hover:text-purple-500">+91 721953764</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-400">Pune, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="https://github.com/atharvnilegaonkar" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/atharv-nilegaonkar/" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                                <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                                <input type="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Subject">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" rows="5" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-purple-500 font-bold text-xl flex items-center">
+                        <span class="bg-purple-600 w-6 h-6 rounded-full flex items-center justify-center mr-2">
+                            <span class="w-2 h-2 bg-white rounded-full"></span>
+                        </span>
+                        Atharv Nilegaonkar
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white">Skills</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2023 Atharv Nilegaonkar. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/atharvnilegaonkar" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/atharv-nilegaonkar/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
